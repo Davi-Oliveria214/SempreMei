@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Julio Cesar – MEI & Mudanças</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/app.js" defer></script>
+    </head>
+    <body>
+        <!-- ===== NAVBAR ===== -->
+        <nav id="navbar">
+            <a href="#" class="nav-logo">
+                Julio Cesar
+            </a>
+            <div class="fundo">
+                <ul class="nav-links">
+                    <li>
+                        <a href="#mei">Serviços MEI</a>
+                    </li>
+                    <li>
+                        <a href="#mudancas">Mudanças</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="nav-cta">Falar no WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- ===== HERO: SPLIT ===== -->
+        <section class="hero" id="home">
+            <div class="hero-mei" onclick="document.getElementById('mei').scrollIntoView({behavior:'smooth'})">
+                <div class="hero-tag">Contabilidade & Regularização</div>
+                <h1 class="hero-title">
+                    Seu MEI
+                    <br>
+                    sempre em
+                    <em>dia</em>
+                </h1>
+                <p class="hero-desc">Abertura, declarações, emissão de notas e toda a burocracia do seu negócio — resolvida com agilidade e segurança.</p>
+                <a href="#mei" class="btn btn-mei">Ver serviços MEI →</a>
+            </div>
+            <div class="hero-divider">
+                <div class="hero-divider-badge">
+                    MEI
+                    <br>
+                    &amp;
+                    <br>
+                    FRETE
+                </div>
+            </div>
+            <div class="hero-mud" onclick="document.getElementById('mudancas').scrollIntoView({behavior:'smooth'})">
+                <div class="hero-tag">Fretes & Mudanças</div>
+                <h1 class="hero-title">
+                    Mudanças
+                    <em>sem</em>
+                    <br>
+                    dor de cabeça
+                </h1>
+                <p class="hero-desc">Residencial, comercial ou só um frete avulso — cuidamos de tudo com pontualidade, cuidado e preço justo.</p>
+                <a href="#mudancas" class="btn btn-mud">Ver serviços de mudança →</a>
+            </div>
+        </section>
+        <!-- ===== TRUST STRIP ===== -->
+        <div class="trust-strip">
+            <div class="trust-item reveal">
+                <div class="trust-icon">🏆</div>
+                <div class="trust-text">
+                    <strong>+200</strong>
+                    <span>Clientes atendidos</span>
+                </div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon">📋</div>
+                <div class="trust-text">
+                    <strong>+150</strong>
+                    <span>MEIs abertos</span>
+                </div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon">🚛</div>
+                <div class="trust-text">
+                    <strong>+300</strong>
+                    <span>Mudanças realizadas</span>
+                </div>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon">⭐</div>
+                <div class="trust-text">
+                    <strong>4.9 / 5</strong>
+                    <span>Avaliação média</span>
+                </div>
+            </div>
+        </div>
+        <!-- ===== SEÇÃO MEI ===== -->
+        <section id="mei">
+            <div class="mei-grid">
+                <div>
+                    <div class="section-header reveal">
+                        <p class="section-label mei-label">● Contabilidade para MEI</p>
+                        <h2 class="section-title">Tudo que seu negócio precisa para estar regularizado</h2>
+                        <p class="section-sub">Seja você autônomo, prestador de serviço ou comerciante, cuidamos de toda a parte burocrática para você focar no que realmente importa.</p>
+                    </div>
+                    <div class="mei-services">
+                        <div class="mei-card reveal">
+                            <div class="mei-card-icon">🏢</div>
+                            <h4>Abertura de MEI</h4>
+                            <p>Registro, CNPJ e tudo pronto para você começar a emitir notas.</p>
+                        </div>
+                        <div class="mei-card reveal">
+                            <div class="mei-card-icon">📄</div>
+                            <h4>DASN Anual</h4>
+                            <p>Declaração anual entregue no prazo, sem multas ou pendências.</p>
+                        </div>
+                        <div class="mei-card reveal">
+                            <div class="mei-card-icon">🧾</div>
+                            <h4>Emissão de NFS-e</h4>
+                            <p>Nota fiscal de serviço emitida de forma rápida e correta.</p>
+                        </div>
+                        <div class="mei-card reveal">
+                            <div class="mei-card-icon">🔄</div>
+                            <h4>Alteração & Baixa</h4>
+                            <p>Atualização de dados, mudança de atividade ou encerramento do MEI.</p>
+                        </div>
+                        <div class="mei-card reveal">
+                            <div class="mei-card-icon">📊</div>
+                            <h4>DAS Mensal</h4>
+                            <p>Acompanhamento e emissão do boleto mensal do Simples Nacional.</p>
+                        </div>
+                        <div class="mei-card reveal">
+                            <div class="mei-card-icon">⚠️</div>
+                            <h4>Regularização</h4>
+                            <p>Débitos, pendências e certidões negativas resolvidos.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:2rem;" class="reveal">
+                        <a href="#contato" class="btn btn-mei">Solicitar serviço MEI →</a>
+                    </div>
+                </div>
+                <div class="mei-visual reveal">
+                    <div class="mei-visual-decoration">📋</div>
+                    <div class="mei-visual-tag">Por que escolher?</div>
+                    <h3>Atendimento ágil, sem burocracia complicada</h3>
+                    <p class="mei-price-note">Sem fila, sem papelada desnecessária</p>
+                    <p class="mei-price-note" style="margin-top:.5rem;">Preço justo e transparente</p>
+                    <p class="mei-price-note" style="margin-top:.5rem;">Atendimento online ou presencial</p>
+                    <p class="mei-price-note" style="margin-top:.5rem;">Retorno rápido via WhatsApp</p>
+                </div>
+            </div>
+        </section>
+        <!-- ===== SEÇÃO MUDANÇAS ===== -->
+        <section id="mudancas">
+            <div class="mud-grid">
+                <div class="mud-visual reveal">
+                    <div class="mud-visual-decoration">🚛</div>
+                    <div class="mud-visual-tag">O que está incluso</div>
+                    <h3>Cuidado com cada item da sua mudança</h3>
+                    <ul class="mud-checklist">
+                        <li>Equipe treinada e comprometida</li>
+                        <li>Embrulho e proteção de móveis</li>
+                        <li>Pontualidade garantida</li>
+                        <li>Atendimento em toda a região</li>
+                        <li>Orçamento gratuito e sem compromisso</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="section-header reveal">
+                        <p class="section-label mud-label">● Fretes & Mudanças</p>
+                        <h2 class="section-title">Do ponto A ao B, com cuidado e tranquilidade</h2>
+                        <p class="section-sub">Residencial, comercial ou um simples frete — trabalhamos com dedicação para que sua mudança seja tranquila e sem imprevistos.</p>
+                    </div>
+                    <div class="mud-cards">
+                        <div class="mud-card reveal">
+                            <div class="mud-card-icon">🏠</div>
+                            <div>
+                                <h4>Mudança Residencial</h4>
+                                <p>Apartamento, casa, kitnet — planejamos e executamos com atenção a cada detalhe.</p>
+                            </div>
+                        </div>
+                        <div class="mud-card reveal">
+                            <div class="mud-card-icon">🏢</div>
+                            <div>
+                                <h4>Mudança Comercial</h4>
+                                <p>Escritórios, lojas e estoques transportados com organização e agilidade.</p>
+                            </div>
+                        </div>
+                        <div class="mud-card reveal">
+                            <div class="mud-card-icon">📦</div>
+                            <div>
+                                <h4>Frete Avulso</h4>
+                                <p>Precisa mover um item específico? Geladeira, sofá, compras grandes? Temos a solução.</p>
+                            </div>
+                        </div>
+                        <div class="mud-card reveal">
+                            <div class="mud-card-icon">🔧</div>
+                            <div>
+                                <h4>Desmontagem & Montagem</h4>
+                                <p>Montamos e desmontamos móveis de forma rápida e segura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top:2rem;" class="reveal">
+                        <a href="#contato" class="btn btn-mud">Solicitar orçamento de mudança →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== CONTATO ===== -->
+        <section id="contato">
+            <div class="cta-box reveal">
+                <p class="section-label">● Fale conosco</p>
+                <h2 class="section-title">Pronto para começar?</h2>
+                <p class="section-sub" style="margin: 0 auto;">
+                    Entre em contato agora mesmo pelo WhatsApp. Atendimento ágil, sem enrolação e com a atenção que você merece.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/qr/BGASRZREIAERG1" class="btn-wa" target="_blank">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Falar sobre MEI
+                    </a>
+                    <a href="https://wa.me/qr/BGASRZREIAERG1" class="btn-wa" target="_blank">
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Orçamento de Mudança
+                    </a>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+55 (11) 93144-3135</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>contato@exemplo.com.br</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>São Paulo – SP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>
+                © 2025
+                <span>Julio Cesar</span>
+                — Serviços MEI & Mudanças.
+            </p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,941 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* === MEI (ajustado para o cartão real) === */
+  --mei-dark: #081426;
+  --mei-mid: #0F2A4A;
+  --mei-accent: #2BB3FF;
+  --mei-gold: #E6C068;
+
+  /* === MUDANÇAS: cartão preto/branco — usamos o dourado do MEI como destaque === */
+  --mud-dark: #1a1a1a;
+  --mud-mid: #2c2c2c;
+  --mud-accent: #F0A500;
+
+  /* === Neutros === */
+  --white: #ffffff;
+  --gray-light: #F4F5F7;
+  --gray-mid: #E2E4E8;
+  --gray-text: #666666;
+
+  /* === Utilitários === */
+  --radius: 12px;
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, .07);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+.hero-title,
+.section-title,
+.mei-visual h3,
+.mud-visual h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===================== NAVBAR ===================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 68px;
+  background: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gray-mid);
+  transition: box-shadow .3s;
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, .08);
+}
+
+.nav-logo {
+
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--mei-dark);
+  letter-spacing: -.5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.nav-logo-mei {
+  color: var(--mei-accent);
+}
+
+.nav-logo-amp {
+  color: var(--gray-text);
+  font-weight: 300;
+  margin: 0 .15rem;
+}
+
+.nav-logo-mud {
+  color: var(--mud-accent);
+}
+
+
+
+.nav-links.ativar {
+  display: flex;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-size: .9rem;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--mei-dark);
+}
+
+.nav-cta {
+  background: var(--mei-accent);
+  color: #fff !important;
+  padding: .45rem 1.1rem;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  font-size: .85rem !important;
+  transition: background .2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--mei-mid) !important;
+}
+
+.nav-burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transition: all .3s;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-mei,
+.hero-mud {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 6%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* MEI: branco puro */
+.hero-mei {
+  background: linear-gradient(135deg, #081426, #0F2A4A);
+  border-right: 1px solid var(--gray-mid);
+}
+
+/* Mudanças: cinza clarinho */
+.hero-mud {
+  background: var(--gray-light);
+  color: #1a1a1a;
+}
+
+.hero-mei::before {
+  content: '📋';
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  font-size: 14rem;
+  opacity: .05;
+  pointer-events: none;
+}
+
+.hero-mud::before {
+  content: '🚛';
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  font-size: 14rem;
+  opacity: .05;
+  pointer-events: none;
+}
+
+.hero-tag {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gray-text);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--mei-dark);
+}
+
+.hero-mei .hero-title em {
+  color: var(--mei-accent);
+  font-style: normal;
+}
+
+.hero-mud .hero-title em {
+  color: var(--mud-accent);
+  font-style: normal;
+}
+
+.hero-desc {
+  font-size: .95rem;
+  line-height: 1.7;
+  color: var(--gray-text);
+  max-width: 360px;
+  margin-bottom: 2rem;
+}
+
+/* ===================== BOTÕES ===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: .9rem;
+  text-decoration: none;
+  transition: all .25s;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* MEI: azul médio do cartão */
+.btn-mei {
+  background: var(--mei-accent);
+  color: #081426;
+}
+
+.btn-mei:hover {
+  background: var(--mei-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 174, .3);
+}
+
+/* Mudanças: dourado do cartão MEI (destaque dos checkmarks) */
+.btn-mud {
+  background: var(--mud-accent);
+  color: #1a1a1a;
+}
+
+.btn-mud:hover {
+  background: #d4920a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(240, 165, 0, .35);
+}
+
+/* Divisor hero */
+.hero-divider {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--gray-mid);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-divider-badge {
+  background: var(--white);
+  color: #444;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-align: center;
+  line-height: 1.3;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .10);
+  border: 1px solid var(--gray-mid);
+  z-index: 3;
+}
+
+/* ===================== TRUST STRIP ===================== */
+.trust-strip {
+  background: var(--white);
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--gray-mid);
+  border-bottom: 1px solid var(--gray-mid);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.trust-icon {
+  font-size: 1.5rem;
+}
+
+.trust-text strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.trust-text span {
+  font-size: .8rem;
+  color: var(--gray-text);
+}
+
+/* ===================== SEÇÕES — COMPARTILHADO ===================== */
+section {
+  padding: 5rem 5%;
+}
+
+.section-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+  display: block;
+}
+
+.section-title {
+
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--mei-dark);
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--gray-text);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+/* ===================== SEÇÃO MEI ===================== */
+#mei {
+  background: var(--white);
+}
+
+.mei-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mei-label {
+  color: var(--mei-accent);
+}
+
+.mei-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mei-card {
+  background: var(--white);
+  border: 1px solid var(--gray-mid);
+  border-left: 3px solid var(--mei-accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 0 10px rgba(43, 179, 255, 0.25);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.mei-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.mei-card-icon {
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+}
+
+.mei-card h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: .3rem;
+}
+
+.mei-card p {
+  font-size: .8rem;
+  color: var(--gray-text);
+  line-height: 1.5;
+}
+
+/* Painel lateral MEI */
+.mei-visual {
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.mei-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(37, 99, 174, .07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.mei-visual-decoration {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(37, 99, 174, .2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.mei-visual-tag {
+  display: inline-block;
+  background: var(--mei-accent);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: .35rem .75rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.mei-visual h3 {
+
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--mei-dark);
+  position: relative;
+}
+
+.mei-price-note {
+  font-size: .85rem;
+  color: var(--gray-text);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.mei-price-note+.mei-price-note {
+  margin-top: .5rem;
+}
+
+.mei-price-note::before {
+  content: '✓';
+  color: var(--mei-accent);
+  font-weight: 700;
+}
+
+/* ===================== SEÇÃO MUDANÇAS ===================== */
+#mudancas {
+  background: var(--gray-light);
+}
+
+.mud-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mud-label {
+  color: var(--mud-accent);
+}
+
+.mud-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mud-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--white);
+  border: 1px solid var(--gray-mid);
+  border-left: 3px solid var(--mud-accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.mud-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.mud-card-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.mud-card h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: .25rem;
+}
+
+.mud-card p {
+  font-size: .8rem;
+  color: var(--gray-text);
+  line-height: 1.5;
+}
+
+/* Painel lateral Mudanças */
+.mud-visual {
+  background: var(--white);
+  border: 1px solid var(--gray-mid);
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.mud-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 70% 20%, rgba(240, 165, 0, .07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.mud-visual-decoration {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 5rem;
+  opacity: .07;
+  pointer-events: none;
+}
+
+.mud-visual-tag {
+  display: inline-block;
+  background: var(--mud-accent);
+  color: #1a1a1a;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: .35rem .75rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.mud-visual h3 {
+
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--mud-dark);
+  position: relative;
+}
+
+.mud-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+}
+
+.mud-checklist li {
+  font-size: .85rem;
+  color: var(--gray-text);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.mud-checklist li::before {
+  content: '✓';
+  color: var(--mud-accent);
+  font-weight: 700;
+}
+
+/* ===================== CONTATO / CTA ===================== */
+#contato {
+  background: var(--gray-light);
+  border-top: 1px solid var(--gray-mid);
+  text-align: center;
+}
+
+#contato .section-label {
+  color: var(--gray-text);
+}
+
+.cta-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Botão WhatsApp MEI */
+.btn-wa-mei {
+  background: var(--mei-accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .85rem 2rem;
+  border-radius: 50px;
+
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: all .25s;
+  box-shadow: 0 4px 20px rgba(37, 99, 174, .25);
+}
+
+.btn-wa-mei:hover {
+  background: var(--mei-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37, 99, 174, .35);
+}
+
+/* Botão WhatsApp Mudanças */
+.btn-wa-mud {
+  background: var(--mud-accent);
+  color: #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .85rem 2rem;
+  border-radius: 50px;
+
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: all .25s;
+  box-shadow: 0 4px 20px rgba(240, 165, 0, .25);
+}
+
+.btn-wa-mud:hover {
+  background: #d4920a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(240, 165, 0, .35);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--gray-mid);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .9rem;
+  color: #555;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: var(--white);
+  border-top: 1px solid var(--gray-mid);
+  text-align: center;
+  padding: 1.5rem 5%;
+  font-size: .8rem;
+  color: var(--gray-text);
+}
+
+footer strong {
+  color: #1a1a1a;
+}
+
+/* ===================== ANIMAÇÕES ===================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-mei>* {
+  animation: fadeUp .7s both;
+}
+
+.hero-mei .hero-tag {
+  animation-delay: .10s;
+}
+
+.hero-mei .hero-title {
+  color: var(--white);
+  animation-delay: .20s;
+}
+
+.hero-mei .hero-desc {
+  color: rgba(255, 255, 255, 0.75);
+  animation-delay: .30s;
+}
+
+.hero-mei .btn {
+  animation-delay: .40s;
+}
+
+.hero-mud>* {
+  animation: fadeUp .7s both;
+}
+
+.hero-mud .hero-tag {
+  animation-delay: .20s;
+}
+
+.hero-mud .hero-title {
+  animation-delay: .30s;
+}
+
+.hero-mud .hero-desc {
+  animation-delay: .40s;
+}
+
+.hero-mud .btn {
+  animation-delay: .50s;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 900px) {
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 90;
+  }
+
+  .fundo.ativar {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 2.3s ease;
+    z-index: 100;
+  }
+
+  .nav-links.ativar {
+    right: 0;
+  }
+
+  .nav-burger {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-mei,
+  .hero-mud {
+    padding: 4rem 7%;
+    min-height: 55vw;
+  }
+
+  .hero-divider {
+    display: none;
+  }
+
+  .mei-grid,
+  .mud-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .mei-visual,
+  .mud-visual {
+    min-height: 280px;
+  }
+
+  .dep-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-strip {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mei-services {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-mei,
+  .hero-mud {
+    min-height: 60vh;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+}

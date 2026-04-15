@@ -70,7 +70,7 @@ nav.scrolled {
 }
 
 .nav-logo {
-   font-size: 1.3rem;
+  font-size: 1.3rem;
   font-weight: 900;
   color: var(--mei-dark);
   letter-spacing: -.5px;
@@ -78,6 +78,10 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: .5rem;
+}
+
+.nav-logo > img{
+  width: 2.5rem;
 }
 
 .nav-logo-mei {

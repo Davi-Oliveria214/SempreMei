@@ -80,7 +80,7 @@ nav.scrolled {
   gap: .5rem;
 }
 
-.nav-logo > img{
+.nav-logo>img {
   width: 2.5rem;
 }
 
@@ -97,8 +97,6 @@ nav.scrolled {
 .nav-logo-mud {
   color: var(--mud-accent);
 }
-
-
 
 .nav-links.ativar {
   display: flex;
@@ -130,7 +128,7 @@ nav.scrolled {
   border-radius: 50px;
   font-weight: 600 !important;
   font-size: .85rem !important;
-  transition: background .2s !important;
+  transition: .2s;
 }
 
 .nav-cta:hover {
@@ -352,7 +350,7 @@ nav.scrolled {
 
 /* ===================== SEÇÕES — COMPARTILHADO ===================== */
 section {
-  padding: 5rem 5%;
+  padding: 1.5rem 4%;
 }
 
 .section-label {

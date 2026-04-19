@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davi-oliveria214.github.io/Sempre-Mei/sitemap.xml

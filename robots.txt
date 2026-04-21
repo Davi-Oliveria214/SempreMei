@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davi-oliveria214.github.io/Sempre-Mei/sitemap.xml
+Sitemap: https://davi-oliveria214.github.io/SempreMei/sitemap.xml
